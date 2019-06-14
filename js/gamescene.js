@@ -20,7 +20,7 @@ class GameScene extends Phaser.Scene{
         this.planet = this.physics.add.image(500,500, 'planet');
         this.planetMaxResources = 100;
         this.planetCurrentResources = this.planetMaxResources;
-
+        
         //Player
         this.player = this.physics.add.image(500, 500, 'nave');
         this.player.setDamping(true);
@@ -35,14 +35,16 @@ class GameScene extends Phaser.Scene{
         this.playerCanTakeDmg = true;
         this.score = 0;
         this.score = 0;
-
+        
         this.fireTimer =this.time.addEvent({
             delay: 200,
             callback: this.activateFire,
             callbackScope: this,
             loop: true
         });
+        this.canFireEvent = this.physics.add.overlap(this.player, this.planet, (player, planet) => this.canFire = false, null, this);
 
+        
         //HP
         this.hp = this.add.group({
             key: 'life',
@@ -109,6 +111,10 @@ class GameScene extends Phaser.Scene{
     }
 
     update(){
+        if(!this.canFireEvent){
+            this.canFire = false;
+        }
+
         this.textResources.setText(this.planetCurrentResources + "%");
         this.textScore.setText(this.score);
         this.space.tilePositionX += 0.1;
@@ -370,4 +376,5 @@ class GameScene extends Phaser.Scene{
         this.planetCurrentResources -= 15;
         this.playerIsDead = false;
     }
+    
 }

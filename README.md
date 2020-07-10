@@ -1,4 +1,4 @@
-# Phaser 3 JS Game
+# Phaser 3 - Asteroids
 This game was made for a college course, it is inspired by "Asteroids" and tries to build upon it, even if not much.
 
 ## Objectives

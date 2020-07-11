@@ -17,4 +17,4 @@ Save your home planet from its eminent doom as asteroids keep approaching.
 * Game music: Eric Skiff - A Night Of Dizzy Spells - Resistor Anthems - Available at http://EricSkiff.com/music
 * Explosion animation: “Pixel Explosion (12 Frames)” por J-Robot, disponível em https://opengameart.org/content/pixel-explosion-12-frames
 
-All the other assets used not listed were done by me.
+All the other assets used and not listed were done by me.
